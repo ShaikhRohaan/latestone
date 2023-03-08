@@ -54,7 +54,7 @@ const Task = () => {
   async function bindchack() {
     var key = location.state.toString()
     console.log(key)
-    fetch('http://localhost:8081/chackmail?email=' + key)
+    fetch('http://159.65.126.129:8081/chackmail?email=' + key)
       .then(function (res) {
         return res.json()
       })
@@ -78,7 +78,7 @@ const Task = () => {
   bindchack()
 
   async function refrellChack(key){
-    fetch('http://localhost:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
+    fetch('http://159.65.126.129:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
     .then(function (res) {
       return res.json()
     })
@@ -99,7 +99,7 @@ const Task = () => {
     var adrs = document.getElementById('Address').value
     if (adrs.length >= 40) {
       console.log(adrs)
-      const url = 'http://localhost:8081/insaddress'
+      const url = 'http://159.65.126.129:8081/insaddress'
 
       let data = {
         adrs: adrs,
@@ -160,7 +160,7 @@ const Task = () => {
     }
 
     axios
-      .post('http://localhost:8081/tokenhandle', data)
+      .post('http://159.65.126.129:8081/tokenhandle', data)
       .then(function (response) {
         console.log(response.data)
 

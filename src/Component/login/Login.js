@@ -48,7 +48,7 @@ document.body.style.color = "white";
           })
           Key.push(0)
     } else {
-  fetch("http://localhost:8081/login?email="+email+"&password="+password)
+  fetch("http://159.65.126.129:8081/login?email="+email+"&password="+password)
     .then(function(res) {
         return res.json();
     })
@@ -136,7 +136,7 @@ document.body.style.color = "white";
       })	
    }
    else{
-    fetch("http://localhost:8081/chackuser?username="+userName)
+    fetch("http://159.65.126.129:8081/chackuser?username="+userName)
     .then(function(res) {
         return res.json();
     })
@@ -153,7 +153,7 @@ document.body.style.color = "white";
               })	
             })
         }else if(data.length == 0){
-                fetch("http://localhost:8081/chackmail?email="+Email)
+                fetch("http://159.65.126.129:8081/chackmail?email="+Email)
                 .then(function(res) {
                     return res.json();
                 })
@@ -171,7 +171,7 @@ document.body.style.color = "white";
                         })
                     }else {
                     
-                      fetch("http://localhost:8081/refrellCode?Code="+Referral)
+                      fetch("http://159.65.126.129:8081/refrellCode?Code="+Referral)
                       .then(function(res) {
                           return res.json();
                           console.log(res);
@@ -185,7 +185,7 @@ document.body.style.color = "white";
                                   text: 'Referral Code Not Exists',
                                 })	 
                           }else {
-                          const url = 'http://localhost:8081/register';
+                          const url = 'http://159.65.126.129:8081/register';
 
                           let data = {
                               name : Name ,
