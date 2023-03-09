@@ -20,6 +20,72 @@ const Task = () => {
   const Swal = require('sweetalert2')
   var location = useLocation()
   var asd = location.state
+  var z = localStorage.getItem("1");
+  var y = localStorage.getItem("2");
+  var x = localStorage.getItem("3");
+  var w = localStorage.getItem("4");
+
+
+
+
+
+
+async function tastchack(){
+  
+  
+
+
+  // if(localStorage.getItem('1')){
+  //   document.getElementById('11').style.display = 'block';
+  // }
+  // else if(localStorage.getItem('2')){
+  //   document.getElementById('two').style.display = 'block';
+  // }
+
+  // else if(localStorage.getItem('3')){
+  //   document.getElementById('two').style.display = 'block';
+  // }
+
+  // else if(localStorage.getItem('4')){
+  //   document.getElementById('4').style.display = 'none';
+  //     }
+
+  // else{
+  //   document.getElementById('1').style.display = 'none';
+  // //   document.getElementById('44').style.display = 'block';
+  // }
+  // }else{
+  //   document.getElementById('1').style.display = 'block';
+  //   document.getElementById('11').style.display = 'none';
+  // }
+
+  // if(y == 2){
+  //   document.getElementById('two').style.display = 'block';
+  //   document.getElementById('two2').style.display = 'none';
+  // }else{
+  //   document.getElementById('2').style.display = 'none';
+  //   document.getElementById('22').style.display = 'block';
+  // }
+
+  // if(x == 3){
+  //   document.getElementById('3').style.display = 'none';
+  //   document.getElementById('33').style.display = 'block';
+  // }else{
+  //   document.getElementById('3').style.display = 'block';
+  //   document.getElementById('33').style.display = 'none';
+  // }
+
+  // if(w == 4){
+  //   document.getElementById('4').style.display = 'none';
+  //   document.getElementById('44').style.display = 'block';
+  // }else{
+  //   document.getElementById('4').style.display = 'block';
+  //   document.getElementById('44').style.display = 'none';
+  // }
+
+}
+// tastchack()
+
 
   async function Friends() {
     var key = location.state
@@ -49,12 +115,15 @@ const Task = () => {
     } else {
       document.getElementById('inputAdrs').style.display = 'block'
     }
+
+ 
+
   }
 
   async function bindchack() {
     var key = location.state.toString()
     console.log(key)
-    fetch('http://localhost:8081/chackmail?email=' + key)
+    fetch('http://159.65.126.129:8081/chackmail?email=' + key)
       .then(function (res) {
         return res.json()
       })
@@ -78,7 +147,7 @@ const Task = () => {
   bindchack()
 
   async function refrellChack(key){
-    fetch('http://localhost:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
+    fetch('http://159.65.126.129:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
     .then(function (res) {
       return res.json()
     })
@@ -93,13 +162,26 @@ const Task = () => {
   }
 
 
+async function clicktweetzax(){
+  await localStorage.setItem("1", 1);
+}
+async function clicktweetbgvt(){
+  await localStorage.setItem("2", 2);
+}
+async function clickinsta(){
+  await localStorage.setItem("3", 3);
+}
+async function clicktelle(){
+  await localStorage.setItem("4", 4);
+}
+
 
   async function bind() {
     var emaile = asd.toString()
     var adrs = document.getElementById('Address').value
     if (adrs.length >= 40) {
       console.log(adrs)
-      const url = 'http://localhost:8081/insaddress'
+      const url = 'http://159.65.126.129:8081/insaddress'
 
       let data = {
         adrs: adrs,
@@ -151,6 +233,9 @@ const Task = () => {
     chack()
     bindchack()
   }, [])
+  useEffect(() => {
+    tastchack()
+  }, [])
 
   function Handletokenhit() {
     var emaile = asd.toString()
@@ -160,7 +245,7 @@ const Task = () => {
     }
 
     axios
-      .post('http://localhost:8081/tokenhandle', data)
+      .post('http://159.65.126.129:8081/tokenhandle', data)
       .then(function (response) {
         console.log(response.data)
 
@@ -246,7 +331,7 @@ const Task = () => {
       <Container>
         <Grid container style={{ justifyContent: 'center' }}>
           <Grid item lg={6} md={7} sm={9} xs={12} className="mmit_token_main">
-            <Grid
+            {/* <Grid
               container
               style={{
                 backgroundColor: 'white',
@@ -278,18 +363,19 @@ const Task = () => {
                 sm={2.5}
                 xs={3}
                 style={{
-                  backgroundColor: 'rgb(255,199,0)',
+                  // backgroundColor: 'rgb(255,199,0)',
                   paddingTop: '6px',
                   borderRadius: '10px',
                 }}
               >
                 <p className="text_coin">
-                  <b>1 MMIT</b>
+                <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
                 </p>
+               
               </Grid>
-            </Grid>
+            </Grid> */}
 
-            {/* <Grid
+            <Grid
               container
               style={{
                 backgroundColor: "white",
@@ -302,9 +388,9 @@ const Task = () => {
                 <img src='https://png.pngtree.com/png-clipart/20221019/original/pngtree-twitter-round-icon-3d-png-image_8704805.png' alt="" className="mmit_icon" />
               </Grid>
               <Grid item lg={1} md={0.5} sm={0.1}></Grid>
-              <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
+              <Grid style={{cursor:'pointer'}}  onClick={handleClick}  item lg={8} md={8.5} sm={8.4} xs={8}>
                 <p id="task_text">
-                  <Button onClick={handleClick} style={{color:"black" ,textAlign:"center"} }>
+                  <Button style={{color:"black" ,textAlign:"center"} }>
                     Twitter Task
                   </Button>
                 </p>
@@ -326,14 +412,14 @@ const Task = () => {
                       marginTop: "30px",
                     }}
                   >
-                    <Grid item lg={1} md={1} sm={1} xs={1}>
-                      <img src='https://png.pngtree.com/png-clipart/20221019/original/pngtree-twitter-round-icon-3d-png-image_8704805.png' alt="" className="mmit_icon" />
+                    <Grid  item lg={1} md={1} sm={1} xs={1}>
+                      <img style={{borderRadius:'100px'}} src='https://pbs.twimg.com/profile_images/1534430748802813952/t6fKLXIy_400x400.jpg' alt="" className="mmit_icon" />
                     </Grid>
                     <Grid item lg={1} md={0.5} sm={0.1}></Grid>
                     <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
                       <p id="task_text">
-                        <Button style={{color:'black'}} href ='https://twitter.com/mangomanintell'>
-                          Follow Us On Twitter and Get
+                        <Button style={{color:'black'}} onClick={clicktweetzax} href ='https://twitter.com/zillionxo?s=21&t=ebp8VWqYaH-TkTYGoAhtcg'>
+                          Follow Us On Twitter 
                         </Button>
                       </p>
                     </Grid>
@@ -345,22 +431,70 @@ const Task = () => {
                       sm={2.5}
                       xs={3}
                       style={{
-                        backgroundColor: "rgb(255,199,0)",
+                        // backgroundColor: "rgb(255,199,0)",
                         paddingTop:'6px',
                         borderRadius: "10px",
                       }}
                     >
-                      <p className="text_coin">
-                        <b>1 MMIT</b>
+                     {z === '1' ?<p id='11'   className="text_coin">
+                      <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
                       </p>
+                      :
+                      <p id='1' className="text_coin">
+                      <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
+                      </p>}
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid
+                    container
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "15px",
+                      marginBottom: "20px",
+                      marginTop: "30px",
+                    }}
+                  >
+                    <Grid item lg={1} md={1} sm={1} xs={1}>
+                      <img style={{borderRadius:'100px'}} src='https://pbs.twimg.com/profile_images/1506658259012583426/rJ-_g1YJ_400x400.jpg' alt="" className="mmit_icon" />
+                    </Grid>
+                    <Grid item lg={1} md={0.5} sm={0.1}></Grid>
+                    <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
+                      <p id="task_text">
+                        <Button style={{color:'black'}} onClick={clicktweetbgvt}  href ='https://twitter.com/bitgameverse?s=21&t=ebp8VWqYaH-TkTYGoAhtcg'>
+                          Follow Us On Twitter 
+                        </Button>
+                      </p>
+                    </Grid>
+
+                    <Grid
+                      item
+                      lg={2}
+                      md={2}
+                      sm={2.5}
+                      xs={3}
+                      style={{
+                        // backgroundColor: "rgb(255,199,0)",
+                        paddingTop:'6px',
+                        borderRadius: "10px",
+                      }}
+                    >
+                     {y === "2" ? <p id='two2' className="text_coin">
+                      <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
+                      </p>
+                      :
+                      <p id='two' className="text_coin">
+                      <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
+                      </p> }
                     </Grid>
                   </Grid>
 
                
                 </div>
               )}
-            </div> */}
-            <Grid
+            </div>
+            {/* <Grid
               container
               style={{
                 backgroundColor: 'white',
@@ -404,7 +538,7 @@ const Task = () => {
                   <b>1 MMIT</b>
                 </p>
               </Grid>
-            </Grid>
+            </Grid> */}
             {/* <Grid
               container
               style={{
@@ -486,6 +620,7 @@ const Task = () => {
                   <Button
                     href="https://instagram.com/mangomanintell?igshid=YmMyMTA2M2Y="
                     id='dawnload_sbg'
+                    onClick={clickinsta}
                   >
                     Join Us On Instagram
                   </Button>
@@ -498,14 +633,18 @@ const Task = () => {
                 sm={2.5}
                 xs={3}
                 style={{
-                  backgroundColor: 'rgb(255,199,0)',
+                  // backgroundColor: 'rgb(255,199,0)',
                   paddingTop: '6px',
                   borderRadius: '10px',
                 }}
               >
-                <p className="text_coin">
-                  <b>1 MMIT</b>
+                {x === "3" ? <p id='33'   className="text_coin">
+                <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
                 </p>
+                :
+                <p id='3' className="text_coin">
+                <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
+                </p>}
               </Grid>
             </Grid>
 
@@ -530,6 +669,7 @@ const Task = () => {
                   <Button
                     href="https://t.me/mangomanintell"
                     id='dawnload_sbg'
+                    onClick={clicktelle}
                   >
                     Join Us On Telegram
                   </Button>
@@ -542,14 +682,18 @@ const Task = () => {
                 sm={2.5}
                 xs={3}
                 style={{
-                  backgroundColor: 'rgb(255,199,0)',
+                  // backgroundColor: 'rgb(255,199,0)',
                   paddingTop: '6px',
                   borderRadius: '10px',
                 }}
               >
-                <p className="text_coin">
-                  <b>1 MMIT</b>
+                {w === '4' ? <p id='44' className="text_coin">
+                <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
                 </p>
+                :
+                <p id='4' className="text_coin">
+                <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
+                </p>}
               </Grid>
             </Grid>
             <Grid
@@ -585,7 +729,7 @@ const Task = () => {
                 sm={2.5}
                 xs={3}
                 style={{
-                  backgroundColor: 'rgb(255,199,0)',
+                  // backgroundColor: 'rgb(255,199,0)',
                   paddingTop: '6px',
                   borderRadius: '10px',
                 }}
@@ -604,12 +748,12 @@ const Task = () => {
               textAlign: 'center',
               color: 'rgb(255,199,0)',
               fontFamily: 'Times New Roman, Times, serif',
-              marginBottom: '50px',
               paddingTop: '5%',
             }}
           >
-            BUY Token and Drop Screen Shot Here
+            Complete The Task And Drop Sreenshot Here
           </h1>
+          <p style={{color:'white',fontWeight:'bolder',fontSize:'20px'}}>Buy MMIT of 30$ and upload all sreenshot here to bring this reward</p>
         </Container>
 
         <Grid container style={{ justifyContent: 'center' }}>
@@ -672,7 +816,7 @@ const Task = () => {
             </main>
           </Grid>
         </Grid>
-        <h1
+        {/* <h1
           style={{
             textAlign: 'center',
             color: 'rgb(255,199,0)',
@@ -700,7 +844,7 @@ const Task = () => {
               <b>Read WhitePaper</b>
             </Button>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
    
     </div>

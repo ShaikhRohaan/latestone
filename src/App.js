@@ -16,21 +16,20 @@ function App() {
   const pathValue=location.pathname;
 
 
-
   
   useEffect(() => {
-
+  
   },[pathValue]);
   return (
     <div className="App" style={{ backgroundColor: "rgb(37,36,36)" }}>
-  {pathValue === "/login" ?"": <Header />}
+  {pathValue === "/" ?"": <Header />}
  
    <Routes>
-       <Route exect path="/" element={<Home />} />
-       <Route exect path="/login" element={<Login />} />
+       <Route exect path="/home" element={<Home />} />
+       <Route exect path="/" element={<Login />} />
    </Routes>
 
-  {pathValue === "/login" ?"": <Footer />}
+  {pathValue === "/" ?"": <Footer />}
     </div>
   );
 }

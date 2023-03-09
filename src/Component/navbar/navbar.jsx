@@ -10,20 +10,29 @@ import { Route, Routes, useLocation } from "react-router-dom";
 // import logo from '../src/Image/footerlogo.png';
 function NavScrollExample() {
   var location = useLocation();
- 
+
+
+
+
   async function chack() {
     var key = location.state
     let a = key.toString();
     console.log(a);
+
+
+
     if (a == null || a == undefined || a == '') {
-  
+      
+ 
       document.getElementById("login22").style.display = "block";
+      
       document.getElementById("login12").style.display = "none";
     } else {
       document.getElementById("login22").style.display = "none";
       document.getElementById("login12").style.display = "block";
     }
   }
+  chack()
   async function logout() {
     location.state = 0;
   }
@@ -45,7 +54,7 @@ function NavScrollExample() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1" style={{ color: "white" }}>
+            {/* <Nav.Link href="#action1" style={{ color: "white" }}>
               Home
             </Nav.Link>
             <Nav.Link href="#action2" style={{ color: "white" }}>
@@ -53,7 +62,7 @@ function NavScrollExample() {
             </Nav.Link>
             <Nav.Link href="#action2" style={{ color: "white" }}>
               WhitePaper
-            </Nav.Link>
+            </Nav.Link> */}
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -64,15 +73,15 @@ function NavScrollExample() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown> */}
-            <Nav.Link href="" disabled style={{ color: "white" }}>
+            {/* <Nav.Link href="" disabled style={{ color: "white" }}>
               RoadMap
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <div className="d-flex">
             <table>
               <tr>
                 <td>
-                  <Link to={"/login"}>
+                  <Link id="in1" to={"/"}>
                     <Button
                       id="login22"
                       style={{
@@ -84,7 +93,7 @@ function NavScrollExample() {
                       Login
                     </Button>
                   </Link>
-                  <Link to={"/login"}>
+                  <Link to={"/"}>
                     <Button
                       id="login12"
                       onClick={logout}

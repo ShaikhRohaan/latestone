@@ -15,9 +15,16 @@ const Home = () => {
   return (
     <div>
       <ConectWallet />
-      <MMITTokken />
-      <Task />
-      <ROADMAP />
+   <div style={{paddingBottom:'50px'}}>
+   <MMITTokken />
+   </div>
+      
+      {/* <ROADMAP /> */}
+ 
+  <div style={{paddingBottom:'50px',paddingTop:'20px'}}>
+  <Task />
+   </div>
+ 
     </div>
   )
 }

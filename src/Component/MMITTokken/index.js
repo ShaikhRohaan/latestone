@@ -18,13 +18,13 @@ const MMITTokken=()=>{
       <Container>
         <Grid container style={{justifyContent:'center'}}>
             <Grid item lg={8} md={9} sm={10}  xs={11.8}>
-            <p style={{color:'white',fontSize:'20px',textAlign:'justify'}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour </p>
+            <p style={{color:'white',fontSize:'20px',textAlign:'justify'}}>MMIT is one of the most prominent tokens among the cryptocurrencies. It provides quick, easy and secured transactions. It assures security of investment by locking liquidity and auto burning mechanism. It is designed to be a versatile token that can easily be used for a variety of purposes like payment, rewards and governance within the ecosystem of Mango man Intelligent (MMIT). It can also be used in cryptocurrency swapping.</p>
             </Grid>
         </Grid>
       </Container>
 
 
-      <h1
+      {/* <h1
           style={{
             textAlign: "center",
             color: "white",
@@ -36,13 +36,13 @@ const MMITTokken=()=>{
           data-aos-duration="3000"
         >
           <b>We Are Available</b>{" "}
-        </h1>
+        </h1> */}
         <Container>
      
 
 
           
-          <Grid container className="avialble_main1">
+          {/* <Grid container className="avialble_main1">
           <Grid
               item
               lg={2.5}
@@ -97,8 +97,8 @@ const MMITTokken=()=>{
               </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             container
             className="avialble_main1"
             style={{ paddingBottom: "40px" }}
@@ -159,7 +159,7 @@ const MMITTokken=()=>{
               </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Container>
 
     </div>
