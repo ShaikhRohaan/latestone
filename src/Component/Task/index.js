@@ -54,7 +54,7 @@ const Task = () => {
   async function bindchack() {
     var key = location.state.toString()
     console.log(key)
-    fetch('http://159.65.126.129:8081/chackmail?email=' + key)
+    fetch('http://localhost:8081/chackmail?email=' + key)
       .then(function (res) {
         return res.json()
       })
@@ -78,7 +78,7 @@ const Task = () => {
   bindchack()
 
   async function refrellChack(key){
-    fetch('http://159.65.126.129:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
+    fetch('http://localhost:8081/chackReferralParent?referralParent=' + 'All/'+key+'/Friends')
     .then(function (res) {
       return res.json()
     })
@@ -99,7 +99,7 @@ const Task = () => {
     var adrs = document.getElementById('Address').value
     if (adrs.length >= 40) {
       console.log(adrs)
-      const url = 'http://159.65.126.129:8081/insaddress'
+      const url = 'http://localhost:8081/insaddress'
 
       let data = {
         adrs: adrs,
@@ -160,7 +160,7 @@ const Task = () => {
     }
 
     axios
-      .post('http://159.65.126.129:8081/tokenhandle', data)
+      .post('http://localhost:8081/tokenhandle', data)
       .then(function (response) {
         console.log(response.data)
 
@@ -289,7 +289,7 @@ const Task = () => {
               </Grid>
             </Grid>
 
-            <Grid
+            {/* <Grid
               container
               style={{
                 backgroundColor: "white",
@@ -302,9 +302,9 @@ const Task = () => {
                 <img src='https://png.pngtree.com/png-clipart/20221019/original/pngtree-twitter-round-icon-3d-png-image_8704805.png' alt="" className="mmit_icon" />
               </Grid>
               <Grid item lg={1} md={0.5} sm={0.1}></Grid>
-              <Grid style={{cursor:'pointer'}}  onClick={handleClick}  item lg={8} md={8.5} sm={8.4} xs={8}>
+              <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
                 <p id="task_text">
-                  <Button style={{color:"black" ,textAlign:"center"} }>
+                  <Button onClick={handleClick} style={{color:"black" ,textAlign:"center"} }>
                     Twitter Task
                   </Button>
                 </p>
@@ -326,54 +326,14 @@ const Task = () => {
                       marginTop: "30px",
                     }}
                   >
-                    <Grid  item lg={1} md={1} sm={1} xs={1}>
-                      <img style={{borderRadius:'100px'}} src='https://pbs.twimg.com/profile_images/1534430748802813952/t6fKLXIy_400x400.jpg' alt="" className="mmit_icon" />
-                    </Grid>
-                    <Grid item lg={1} md={0.5} sm={0.1}></Grid>
-                    <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
-                      <p id="task_text">
-                        <Button style={{color:'black'}} target="_blank" href ='https://twitter.com/zillionxo?s=21&t=ebp8VWqYaH-TkTYGoAhtcg'>
-                          Follow Us On Twitter 
-                        </Button>
-                      </p>
-                    </Grid>
-
-                    <Grid
-                      item
-                      lg={2}
-                      md={2}
-                      sm={2.5}
-                      xs={3}
-                      style={{
-                        backgroundColor: "rgb(255,199,0)",
-                        paddingTop:'6px',
-                        borderRadius: "10px",
-                      }}
-                    >
-                      <p className="text_coin">
-                        <b>1 MMIT</b>
-                      </p>
-                    </Grid>
-                  </Grid>
-
-
-                  <Grid
-                    container
-                    style={{
-                      backgroundColor: "white",
-                      borderRadius: "15px",
-                      marginBottom: "20px",
-                      marginTop: "30px",
-                    }}
-                  >
                     <Grid item lg={1} md={1} sm={1} xs={1}>
-                      <img style={{borderRadius:'100px'}} src='https://pbs.twimg.com/profile_images/1506658259012583426/rJ-_g1YJ_400x400.jpg' alt="" className="mmit_icon" />
+                      <img src='https://png.pngtree.com/png-clipart/20221019/original/pngtree-twitter-round-icon-3d-png-image_8704805.png' alt="" className="mmit_icon" />
                     </Grid>
                     <Grid item lg={1} md={0.5} sm={0.1}></Grid>
                     <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
                       <p id="task_text">
-                        <Button style={{color:'black'}} target="_blank" href ='https://twitter.com/bitgameverse?s=21&t=ebp8VWqYaH-TkTYGoAhtcg'>
-                          Follow Us On Twitter 
+                        <Button style={{color:'black'}} href ='https://twitter.com/mangomanintell'>
+                          Follow Us On Twitter and Get
                         </Button>
                       </p>
                     </Grid>
@@ -399,8 +359,8 @@ const Task = () => {
                
                 </div>
               )}
-            </div>
-            {/* <Grid
+            </div> */}
+            <Grid
               container
               style={{
                 backgroundColor: 'white',
@@ -444,7 +404,7 @@ const Task = () => {
                   <b>1 MMIT</b>
                 </p>
               </Grid>
-            </Grid> */}
+            </Grid>
             {/* <Grid
               container
               style={{
@@ -648,7 +608,7 @@ const Task = () => {
               paddingTop: '5%',
             }}
           >
-            Complete The Task And Drop Sreenshot Here
+            BUY Token and Drop Screen Shot Here
           </h1>
         </Container>
 
