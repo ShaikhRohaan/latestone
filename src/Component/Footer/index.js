@@ -78,7 +78,7 @@ const Footer=()=>{
         <Grid item lg={1} md={1} ></Grid>
         <Grid  item lg={4.5} md={4.5} sm={4.5}>
             <h2 style={{fontFamily: "Times New Roman, Times, serif",color:'rgb(255,199,0)'}}>Mango Man Intelligent</h2>
-            <p style={{textAlign:'justify'}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+            <p style={{textAlign:'justify'}}>Mango Man Intelligent  is the combination of both fun and values. It strongly believes in providing the promised values. To be a part of our community, join us right away. </p>
         </Grid>
       </Grid>
         </Container>
