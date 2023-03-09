@@ -42,27 +42,25 @@ document.body.style.color = "white";
     var password = document.getElementById("form2").value;
     if (email == '' || password == '' ) 
     {
-         Swal.fire({
+      Swal.fire({
             icon: 'error',
             title: 'Oops...',
           })
           Key.push(0)
     } else {
+      try{
   fetch("http://159.65.126.129:8081/login?email="+email+"&password="+password)
     .then(function(res) {
         return res.json();
     })
     .then(function(data) {
+      try{
         console.log(data[0].email, "data");
         Key.push(data[0].email);
             console.log(Key)
         if (data.length == 1) {
             
             data.forEach(element => {
-              //  console.log(element)
-              //  console.log(element.email_id);
-
-            
 
             Swal.fire({
                 icon: 'success',
@@ -74,7 +72,7 @@ document.body.style.color = "white";
             var home = document.getElementById("wallets");
             home.click();
             })
-        } else {
+        } else if(data == null || data == undefined || data == []) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -82,11 +80,26 @@ document.body.style.color = "white";
             })	
             localStorage.setItem("allow",false);
           return 0;
+      }else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'You are not registered',
+      })	
+      localStorage.setItem("allow",false);
       }
-    
+    }
+    catch(err){
+      Swal.fire("Not Registered")
+    }
    });
   }
+
+catch(err){
+  Swal.fire("You are not registered!")
+}
   }
+}
   async function register(){
   var signin = document.getElementById("signin");
   var Name = document.getElementById('rname').value;
