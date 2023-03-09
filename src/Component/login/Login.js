@@ -170,7 +170,37 @@ document.body.style.color = "white";
                           })	
                         })
                     }else {
-                    
+                    if(Referral == ''){
+                      const url = 'http://159.65.126.129:8081/register';
+
+                      let data = {
+                          name : Name ,
+                          username : userName ,
+                          email : Email,
+                          password : password ,
+                          refrellCode : 'All/'+Email+'/Friends',
+                          referralParent : Referral,
+                      }
+
+                      let request = new Request(url, {
+                      method: 'POST',
+                      body: JSON.stringify(data),
+                      headers: new Headers({
+                          'Content-Type': 'application/json'
+                      })
+                      });
+
+                      fetch(request)
+                      .then(function() {
+                          Swal.fire({
+                              icon: 'success',
+                              title: 'Registration Success',
+                              showConfirmButton: false,
+                              timer: 900
+                          })
+                      signin.click();
+                      });
+                    }else {
                       fetch("http://159.65.126.129:8081/refrellCode?Code="+Referral)
                       .then(function(res) {
                           return res.json();
@@ -217,7 +247,7 @@ document.body.style.color = "white";
                   }
                });
                
-
+              }
                     }
     
    });
