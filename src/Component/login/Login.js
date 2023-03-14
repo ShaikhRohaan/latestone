@@ -108,7 +108,7 @@ catch(err){
   var Referral = document.getElementById('referral').value;
 
   var emailValue = Email;
-  var emailPattern = /^[^\s@]+@gmail\.com$/;
+  var emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   var password = document.getElementById('upassword').value;
 
