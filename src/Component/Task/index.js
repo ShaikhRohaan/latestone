@@ -91,7 +91,7 @@ async function tastchack(){
   async function Friends() {
     var key = location.state
     var a = key.toString()
-    var b = 'http://localhost:3000/?referral=All/' + a + '/Friends';
+    var b = 'http://mmitairdrop.com/?referral=All/' + a + '/Friends';
     Swal.fire({
       title: 'All/' + a + '/Friends',
       text: 'Copied!',
