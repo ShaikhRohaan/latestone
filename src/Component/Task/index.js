@@ -24,6 +24,7 @@ const Task = () => {
   var y = localStorage.getItem("2");
   var x = localStorage.getItem("3");
   var w = localStorage.getItem("4");
+  var v = localStorage.getItem("5");
 
 
 
@@ -173,6 +174,9 @@ async function clickinsta(){
 }
 async function clicktelle(){
   await localStorage.setItem("4", 4);
+}
+async function wallets(){
+  await localStorage.setItem("5", 5);
 }
 
 
@@ -375,7 +379,7 @@ async function clicktelle(){
               </Grid>
             </Grid> */}
 
-            <Grid
+            {/* <Grid
               container
               style={{
                 backgroundColor: "white",
@@ -397,13 +401,51 @@ async function clicktelle(){
               </Grid>
 
              
-            </Grid>
-       
+            </Grid> */}
+             <Grid
+                  container
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "15px",
+                      marginBottom: "20px",
+                      marginTop: "30px",
+                    }}
+                  >
+                    <Grid  item lg={1} md={1} sm={1} xs={1}>
+                      <img style={{borderRadius:'100px'}} src='https://gateway.pinata.cloud/ipfs/QmbPh3vFcw8Xt2m1NG6RkXfozNzcjf1TtiCdxp2gbnuHVV' alt="" className="mmit_icon" />
+                    </Grid>
+                    <Grid item lg={1} md={0.5} sm={0.1}></Grid>
+                    <Grid item lg={8} md={8.5} sm={8.4} xs={8}>
+                      <p id="task_text">
+                        <Button style={{color:'black'}} onClick={wallets} href ='https://play.google.com/store/apps/details?id=com.cryptoapp.sbgwallet'>
+                          Download SBG Wallet 
+                        </Button>
+                      </p>
+                    </Grid>
 
-             <div>
-              {isShown && (
-                <div className="drawer">
-                  <Grid
+                    <Grid
+                      item
+                      lg={2}
+                      md={2}
+                      sm={2.5}
+                      xs={3}
+                      style={{
+                        // backgroundColor: "rgb(255,199,0)", 
+                        paddingTop:'6px',
+                        borderRadius: "10px",
+                      }}
+                    >
+                     {v === '5' ?<p id='11'   className="text_coin">
+                      <img style={{width:'70%'}} src="https://static.vecteezy.com/system/resources/thumbnails/001/200/261/small/check.png" alt="" />
+                      </p>
+                      :
+                      <p id='1' className="text_coin">
+                      <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
+                      </p>}
+                    </Grid>
+              </Grid>
+              
+                <Grid
                     container
                     style={{
                       backgroundColor: "white",
@@ -444,7 +486,7 @@ async function clicktelle(){
                       <img style={{width:'70%'}} src="https://png.monster/wp-content/uploads/2022/01/png.monster-456-370x280.png" alt="" />
                       </p>}
                     </Grid>
-                  </Grid>
+                </Grid>
 
 
                   <Grid
@@ -490,10 +532,15 @@ async function clicktelle(){
                     </Grid>
                   </Grid>
 
+
+             {/* <div>
+              {isShown && (
+                <div className="drawer">
+              
                
                 </div>
               )}
-            </div>
+            </div> */}
             {/* <Grid
               container
               style={{
