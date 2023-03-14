@@ -36,6 +36,17 @@ document.body.style.color = "white";
     setJustifyActive(value)
   }
 
+  async function refrence(){
+    let params = new URL(document.location).searchParams;
+    let Ref = params.get("referral");
+    localStorage.setItem('ref', Ref);
+    document.getElementById('referral').value = Ref;
+  }
+  refrence()
+  var Refrells = localStorage.getItem('ref');
+
+
+
 
   async  function login(){
     var email = document.getElementById("form1").value;
@@ -276,6 +287,7 @@ catch(err){
   }
 useEffect(() => {
 console.log(Key)
+
 },[Key]);
   return (
     <div style={{color:'white'}}>

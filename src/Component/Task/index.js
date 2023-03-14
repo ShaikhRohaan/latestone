@@ -91,9 +91,10 @@ async function tastchack(){
   async function Friends() {
     var key = location.state
     var a = key.toString()
-
+    var b = 'http://localhost:3000/?referral=All/' + a + '/Friends';
     Swal.fire({
       title: 'All/' + a + '/Friends',
+      text: 'Copied!',
       width: 600,
       padding: '3em',
       color: '#716add',
@@ -105,6 +106,7 @@ async function tastchack(){
         no-repeat
       `,
     })
+    copy(b)
   }
 
   async function chack() {
@@ -137,10 +139,13 @@ async function tastchack(){
           refrellChack(key)
           document.getElementById('badres').innerHTML =
             'Binded Address   :   ' + newStr
-          document.getElementById('bnd').style.display = 'none'
-          document.getElementById('bnd21').style.display = 'block'
+            document.getElementById('badres').style.color = 'white';
+          document.getElementById('bnd').style.display = 'none';
+          document.getElementById('bnd21').style.color = 'white';
+          document.getElementById('bnd21').style.display = 'block';
         } else {
-          document.getElementById('inputAdrs').style.display = 'block'
+          document.getElementById('inputAdrs').style.color = 'white';
+          document.getElementById('inputAdrs').style.display = 'block';
           chack()
         }
       })
@@ -270,28 +275,16 @@ async function wallets(){
       })
   }
 
-  // function handledb(){
-  //   setdbdata({...dbdata, image: image, email: email})
-  // }
-  // let request = new Request(url, {
-  // method: 'POST',
-  // body: JSON.stringify(data),
-  // headers: new Headers({
-  //     'Content-Type': 'application/json'
-  // })
-  // });
+  function copy(b) {
+    var copyText = b;
+    var textField = document.createElement("textarea");
+    textField.innerText = copyText;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand("copy");
+    textField.remove();
 
-  // fetch(request)
-  // .then(function() {
-  //     Swal.fire({
-  //         icon: 'success',
-  //         title: 'Registration Success',
-  //         showConfirmButton: false,
-  //         timer: 900
-  //     })
-  // });
-
-  // }
+  }
 
   return (
     <div className="mmittooken_bg">
